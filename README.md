@@ -1,1 +1,3 @@
-# Junks
+# Spring Core
+--------------
+Spring practicals
