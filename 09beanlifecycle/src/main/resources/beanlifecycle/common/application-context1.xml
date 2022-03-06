@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="math" class="com.suman.beanlifecycle.Math_DeclarativeExample" c:i="10" p:j="20" init-method="init" destroy-method="release"/>
+	<bean id="hook" class="com.suman.beanlifecycle.hook.ShutdownHook"/>
+
+	<bean id="rec" class="com.suman.beanlifecycle.Rectangle_ProgramaticExample" p:br="30" p:len="40"></bean>
+
+</beans>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+		<bean id="scheduler" class="com.suman.sfmi.beans.JobScheduler" autowire="byName">
+			<property name="jobName" value="kafka" />
+			<property name="priority" value="2" />
+		</bean>
+		<bean id="scheduledTime" class="java.util.Calendar" factory-method="getInstance"/>
+
+</beans>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="meeting" class="com.factorybean.bean.Meeting">
+		<property name="members" value="suman, sanjay, shridev" />
+		<property name="agenda" value="Scrum call" />
+		<property name="calender" ref="calender"/>
+	</bean>
+	<bean id="calender" class="com.factorybean.bean.CalenderFactoryBean" scope="singleton">
+		<property name="day" value="27" />
+		<property name="hour" value="10" />
+		<property name="minute" value="00" />
+		<property name="month" value="2" />
+		<property name="year" value="2022" />
+	</bean>
+</beans>

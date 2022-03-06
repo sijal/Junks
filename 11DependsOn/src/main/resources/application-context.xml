@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="cache" class="com.suman.DependsOn.Cache" factory-method="init"/>
+	<bean id="cacheManager" class="com.suman.DependsOn.CacheManager">
+		<constructor-arg name="listOfAccessors">
+			<list>
+				<ref bean="riAccessor"/>
+			</list>
+		</constructor-arg>
+		<constructor-arg name="cache" ref="cache"/>
+	</bean>
+	<bean id="riAccessor" class="com.suman.DependsOn.CitiesRIPropAccessor">
+		<property name="key" value="ri" />
+	</bean>
+	<bean id="loanManager" class="com.suman.DependsOn.LoanManager" depends-on="cacheManager">
+		<property name="cache" ref="cache"/>
+	</bean>
+</beans>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="geolocation" class="com.cpe.bean.GeoLocation">
+		<property name="lat" value="22.2" />
+		<property name="lng" value="33.3"/>
+	</bean>
+	<bean id="print" class="com.cpe.bean.PrintGeoLocation">
+		<!-- <property name="loc" ref="geolocation" /> -->
+		<property name="loc" value="22.2,44.4" />
+	</bean>
+
+</beans>

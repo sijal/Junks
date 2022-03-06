@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+		<bean name="staff1" class="com.suman.beans.Staff">
+			<property name="name" value="Sijal" />
+			<property name="age" value="23" />
+		</bean>
+		<bean name="staff2" class="com.suman.beans.Staff">
+			<property name="name" value="Sejal" />
+			<property name="age" value="23" />
+		</bean>
+
+		<bean name="store" class="com.suman.beans.Store">
+			<property name="staffs">
+				<list>
+					<ref bean="staff1" />
+					<ref bean="staff2" />
+				</list>
+			</property>
+			<property name="storeName" value="First Class" />
+			<constructor-arg name="storeNo" value="1234" />
+			<property name="customers">
+				<set>
+					<value>Ben</value>
+					<value>Kevin</value>
+				</set>
+			</property>
+		</bean>
+
+</beans>
